@@ -13,9 +13,9 @@ import cn.jpush.api.push.model.notification.AndroidNotification;
 import cn.jpush.api.push.model.notification.Notification;
 
 public class PushSender {
-    private static final String MASTER_SECRET = "a2c145c82f74c72534d205a4";
-    private static final String APP_KEY = "7f3d74ec9161e033d723f585";
-    private static JPushClient jpushClient = new JPushClient("a2c145c82f74c72534d205a4", "7f3d74ec9161e033d723f585", null, ClientConfig.getInstance());
+    private static final String MASTER_SECRET = "75a08f6b0f7a969dd92c95f3";
+    private static final String APP_KEY = "fd8e42033aa24ed75a5043e0";
+    private static JPushClient jpushClient = new JPushClient(MASTER_SECRET, APP_KEY, null, ClientConfig.getInstance());
 
     public static void sendLoginEvent(String pushId) {
         try {
