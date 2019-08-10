@@ -6,17 +6,18 @@ import com.xuyang.gdutmallserver.domain.DeleteShipAddressReq;
 import com.xuyang.gdutmallserver.domain.ModifyShipAddressReq;
 import com.xuyang.gdutmallserver.model.ShipAddress;
 import com.xuyang.gdutmallserver.service.ShipAddressService;
-
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
+import static com.xuyang.gdutmallserver.controller.BaseController.DEFAULT_JSON_CONTENT_TYPE;
+
 @Controller
-@RequestMapping(produces = {"application/json;charset=UTF-8"}, value = {"/shipAddress"})
+@RequestMapping(produces = {DEFAULT_JSON_CONTENT_TYPE}, value = {"/shipAddress"})
 public class ShipAddressController extends BaseController {
     public static final int IS_DEFAULT = 0;
     public static final int IS_NOT_DEFAULT = 1;
@@ -68,14 +69,14 @@ public class ShipAddressController extends BaseController {
     @ResponseBody
     public BaseResp modify(@RequestBody ModifyShipAddressReq req) {
         BaseResp resp = new BaseResp();
- 
+
         ShipAddress address = new ShipAddress();
         address.setId(req.getId());
         address.setShipAddress(req.getShipAddress());
         address.setShipUserMobile(req.getShipUserMobile());
         address.setShipUserName(req.getShipUserName());
         address.setShipIsDefault(req.getShipIsDefault());
- 
+
         if (req.getShipIsDefault().intValue() == 0) {
             for (ShipAddress shipAddress : this.shipAddressService.getShipAddress(Integer.valueOf(this.request.getHeader("token")))) {
                 shipAddress.setShipIsDefault(Integer.valueOf(1));
@@ -83,7 +84,7 @@ public class ShipAddressController extends BaseController {
             }
 
         }
- 
+
         this.shipAddressService.modifyShipAddress(address);
         resp.setStatus(0);
         resp.setMessage("修改成功");
@@ -94,7 +95,7 @@ public class ShipAddressController extends BaseController {
     @ResponseBody
     public BaseResp delete(@RequestBody DeleteShipAddressReq req) {
         BaseResp resp = new BaseResp();
- 
+
         boolean isDefault = this.shipAddressService.getShipAddressById(req.getId()).getShipIsDefault().intValue() == 0;
         this.shipAddressService.deleteShipAddress(req.getId());
         List list = this.shipAddressService.getShipAddress(Integer.valueOf(this.request.getHeader("token")));
@@ -103,7 +104,7 @@ public class ShipAddressController extends BaseController {
             address.setShipIsDefault(Integer.valueOf(0));
             this.shipAddressService.modifyShipAddress(address);
         }
- 
+
         resp.setStatus(0);
         resp.setMessage("刪除成功");
         return resp;

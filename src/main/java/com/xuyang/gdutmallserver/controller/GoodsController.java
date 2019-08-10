@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import static com.xuyang.gdutmallserver.controller.BaseController.DEFAULT_JSON_CONTENT_TYPE;
+
 @Controller
-@RequestMapping("/goods")
+@RequestMapping(produces = {DEFAULT_JSON_CONTENT_TYPE}, value = {"/goods"})
 public class GoodsController extends BaseController {
 
     @Autowired

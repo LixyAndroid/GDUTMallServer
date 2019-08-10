@@ -11,8 +11,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import static com.xuyang.gdutmallserver.controller.BaseController.DEFAULT_JSON_CONTENT_TYPE;
+
 @Controller
-@RequestMapping(produces = {"application/json;charset=UTF-8"}, value = {"/msg"})
+@RequestMapping(produces = {DEFAULT_JSON_CONTENT_TYPE}, value = {"/msg"})
 public class MessageController extends BaseController {
 
     @Autowired

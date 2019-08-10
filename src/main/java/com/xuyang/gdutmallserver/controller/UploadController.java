@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import static com.xuyang.gdutmallserver.controller.BaseController.DEFAULT_JSON_CONTENT_TYPE;
+
 @Controller
-@RequestMapping("/common")
+@RequestMapping(produces = {DEFAULT_JSON_CONTENT_TYPE}, value = {"/common"})
 public class UploadController extends BaseController {
     @RequestMapping(value = {"/getUploadToken"}, method = {RequestMethod.POST})
     @ResponseBody

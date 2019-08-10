@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import static com.xuyang.gdutmallserver.controller.BaseController.DEFAULT_JSON_CONTENT_TYPE;
+
 @Controller
-@RequestMapping("/pay")
+@RequestMapping(produces = {DEFAULT_JSON_CONTENT_TYPE}, value = {"/pay"})
 public class PayController extends BaseController {
     @RequestMapping(value = {"/getPaySign"}, method = {org.springframework.web.bind.annotation.RequestMethod.POST})
     @ResponseBody
