@@ -17,9 +17,9 @@ public class UploadController extends BaseController {
     @RequestMapping(value = {"/getUploadToken"}, method = {RequestMethod.POST})
     @ResponseBody
     public BaseResp<String> getUploadToken() {
-        String accessKey = "mCBgiNnVijIUsqQuOS-1KVC5chTq08P-iMoyzjo_";
-        String secretKey = "x3imiDXDFuqnA8Uwd4Y2bG4ISdZpIeU_C8aZursv";
-        String bucket = "kotlin";
+        String accessKey = "ZTs1N6_S4JC2_F9PleDlNWyeo32fqBkJaKYi1Y9m";
+        String secretKey = "aWgCom1HWsmVSXm7l4_N7hLdEl86_1gMyVD62AXz";
+        String bucket = "mallicon";
         Auth auth = Auth.create(accessKey, secretKey);
         String upToken = auth.uploadToken(bucket);
         System.out.println(upToken);

@@ -4,7 +4,7 @@ public class Constant {
     public static final String TAOBAO_SERVER_URL = "http://gw.api.taobao.com/router/rest";
     public static final String TAOBAO_APP_KEY = "23374292";
     public static final String TAOBAO_APP_SECRET = "be5e98d53e40e90b2d41d029290816cb";
-    public static final String DEFAULT_ICON = "http://osea2fxp7.bkt.clouddn.com/108x108.png";
+    public static final String DEFAULT_ICON = "http://pw7t5h9o4.bkt.clouddn.com/icon_default_user.png";
     public static final Long TOKEN_PERIOD = Long.valueOf(604800000L);
     public static final int DEFAULT_PAGE_SIZE = 6;
 

@@ -144,7 +144,7 @@ public class OrderController extends BaseController {
     private void sendMessage(Integer userId, String pushId, String orderId) {
         String curTime = DateUtil.format(new Date(), DateUtil.FORMAT_LONG_NEW);
         MessageInfo msg = new MessageInfo();
-        msg.setMsgIcon("http://osea2fxp7.bkt.clouddn.com/108x108.png");
+        msg.setMsgIcon("http://pw7t5h9o4.bkt.clouddn.com/icon_default_user.png");
         msg.setMsgTitle("下单成功");
         msg.setMsgContent("恭喜您下单成功，有一笔订单等待支付");
         msg.setMsgTime(curTime);

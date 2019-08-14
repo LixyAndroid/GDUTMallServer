@@ -75,7 +75,7 @@ public class UserController extends BaseController {
     private void sendMessage(Integer userId, String pushId) {
         String curTime = DateUtil.format(new Date(), DateUtil.FORMAT_LONG_NEW);
         MessageInfo msg = new MessageInfo();
-        msg.setMsgIcon("http://osea2fxp7.bkt.clouddn.com/108x108.png");
+        msg.setMsgIcon("http://pw7t5h9o4.bkt.clouddn.com/icon_default_user.png");
         msg.setMsgTitle("登录成功");
         msg.setMsgContent("恭喜您登录成功");
         msg.setMsgTime(curTime);
