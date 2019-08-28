@@ -13,17 +13,14 @@ import com.xuyang.gdutmallserver.service.CartGoodsService;
 import com.xuyang.gdutmallserver.service.OrderService;
 import com.xuyang.gdutmallserver.service.ShipAddressService;
 import com.xuyang.gdutmallserver.utils.YuanFenConverter;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.xuyang.gdutmallserver.controller.BaseController.DEFAULT_JSON_CONTENT_TYPE;
 
@@ -156,9 +153,9 @@ public class CartGoodsController extends BaseController {
             this.orderService.addOrderGoods(orderGoods);
         }
 
-
-        InitAction.cartIdMap.put(Integer.valueOf(orderId), cartIdList);
-
+        if (InitAction.cartIdMap != null) {
+            InitAction.cartIdMap.put(Integer.valueOf(orderId), cartIdList);
+        }
         resp.setStatus(0);
         resp.setMessage("购物车提交成功");
         resp.setData(Integer.valueOf(orderId));
