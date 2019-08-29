@@ -7,16 +7,16 @@ public class Constant {
     public static final String DEFAULT_ICON = "http://pw7t5h9o4.bkt.clouddn.com/icon_default_user.png";
     public static final Long TOKEN_PERIOD = Long.valueOf(604800000L);
     public static final int DEFAULT_PAGE_SIZE = 6;
-
     public static abstract interface BC {
+
+
+
         public static final String BC_TYPE = "BC";
     }
-
     public static abstract interface AES {
         public static final String AES_TYPE = "AES";
         public static final String AES_MODE = "AES/ECB/PKCS5Padding";
     }
-
     public static abstract interface ErrorMessage {
         public static final String NETWORK_ERROR = "服务器出错";
     }
