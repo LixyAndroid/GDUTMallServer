@@ -34,13 +34,6 @@
 
 
 
-<!--    <mvc:interceptors>-->
-<!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/*"/>-->
-<!--            <bean class="com.xuyang.gdutmallserver.interceptor.TokenInterceptor"/>-->
-<!--        </mvc:interceptor>-->
-<!--    </mvc:interceptors>-->
-
 
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven/>

@@ -2,66 +2,68 @@ package com.xuyang.gdutmallserver.model;
 
 import java.util.List;
 
-public class Order
-{
-  private Integer id;
-  private Integer payType;
-  private ShipAddress shipAddress;
-  private String totalPrice;
-  private Integer orderStatus;
-  private List<OrderGoods> orderGoodsList;
+public class Order {
+    private Integer id;
+    private Integer payType;
+    private ShipAddress shipAddress;
+    private String totalPrice;
+    private Integer orderStatus;
+    private List<OrderGoods> orderGoodsList;
 
-  public Integer getId()
-  {
-/* 19 */     return this.id;
-  }
+    public Integer getId() {
 
-  public void setId(Integer id) {
-/* 23 */     this.id = id;
-  }
+        return this.id;
+    }
 
-  public Integer getPayType() {
-/* 27 */     return this.payType;
-  }
+    public void setId(Integer id) {
 
-  public void setPayType(Integer payType) {
-/* 31 */     this.payType = payType;
-  }
+        this.id = id;
+    }
 
-  public ShipAddress getShipAddress() {
-/* 35 */     return this.shipAddress;
-  }
+    public Integer getPayType() {
 
-  public void setShipAddress(ShipAddress shipAddress) {
-/* 39 */     this.shipAddress = shipAddress;
-  }
+        return this.payType;
+    }
 
-  public String getTotalPrice() {
-/* 43 */     return this.totalPrice;
-  }
+    public void setPayType(Integer payType) {
+        /* 31 */
+        this.payType = payType;
+    }
 
-  public void setTotalPrice(String totalPrice) {
-/* 47 */     this.totalPrice = totalPrice;
-  }
+    public ShipAddress getShipAddress() {
+        /* 35 */
+        return this.shipAddress;
+    }
 
-  public Integer getOrderStatus() {
-/* 51 */     return this.orderStatus;
-  }
+    public void setShipAddress(ShipAddress shipAddress) {
 
-  public void setOrderStatus(Integer orderStatus) {
-/* 55 */     this.orderStatus = orderStatus;
-  }
+        this.shipAddress = shipAddress;
+    }
 
-  public List<OrderGoods> getOrderGoodsList() {
-/* 59 */     return this.orderGoodsList;
-  }
+    public String getTotalPrice() {
 
-  public void setOrderGoodsList(List<OrderGoods> orderGoodsList) {
-/* 63 */     this.orderGoodsList = orderGoodsList;
-  }
+        return this.totalPrice;
+    }
+
+    public void setTotalPrice(String totalPrice) {
+
+        this.totalPrice = totalPrice;
+    }
+
+    public Integer getOrderStatus() {
+        return this.orderStatus;
+    }
+
+    public void setOrderStatus(Integer orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public List<OrderGoods> getOrderGoodsList() {
+        return this.orderGoodsList;
+    }
+
+    public void setOrderGoodsList(List<OrderGoods> orderGoodsList) {
+
+        this.orderGoodsList = orderGoodsList;
+    }
 }
-
-/* Location:           E:\WorkSpace\App\Test\appidzbnbo3hx6t\ROOT\WEB-INF\classes\
- * Qualified Name:     com.xuyang.gdutmallserver.model.Order
- * JD-Core Version:    0.6.2
- */

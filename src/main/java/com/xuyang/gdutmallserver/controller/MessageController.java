@@ -16,7 +16,6 @@ import static com.xuyang.gdutmallserver.controller.BaseController.DEFAULT_JSON_C
 @Controller
 @RequestMapping(produces = {DEFAULT_JSON_CONTENT_TYPE}, value = {"/msg"})
 public class MessageController extends BaseController {
-
     @Autowired
     private MessageService messageService;
 
@@ -24,20 +23,20 @@ public class MessageController extends BaseController {
     @ResponseBody
     public BaseResp<List<MessageInfo>> getList() {
         BaseResp resp = new BaseResp();
- 
+
         if ((this.request.getHeader("token") == null) || (this.request.getHeader("token").equals(""))) {
             resp.setStatus(0);
             resp.setMessage("未登录");
             return resp;
         }
- 
+
         List list = this.messageService.getMessageList(Integer.valueOf(this.request.getHeader("token")));
         if ((list == null) || (list.size() == 0)) {
             resp.setStatus(0);
             resp.setMessage("列表为空");
             return resp;
         }
- 
+
         resp.setStatus(0);
         resp.setMessage("列表获取成功");
         resp.setData(list);
